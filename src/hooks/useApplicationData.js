@@ -12,22 +12,17 @@ export default function useApplicationData(initial) {
 
 
   const remainingSpots = (state, appointments) => {
-    let result = [];
     return state.days.map((day) => {
       if (day.name === state.day) {
-        const spotCalc = day.appointments
-          .map((id) => appointments[id])
-          .filter((interview) => {
-            result.push(!interview);
-            console.log('papa', result);
-            return result.length;
-          });
         return {
           ...day,
-          spots: {spotCalc}
+          spots: day.appointments
+            .map((id) => (appointments[id]))
+            .filter(({interview}) => {
+              return !interview;
+            }).length
         };
       }
-      console.log('grrrr', day);
       return day;
     });
   };
