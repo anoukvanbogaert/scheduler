@@ -1,7 +1,10 @@
 import React from 'react';
 
+
 const Error = (props) => {
+
   return (
+
     <main className="appointment__card appointment__card--error">
       <section className="appointment__error-message">
         <h1 className="text--semi-bold">Error</h1>
@@ -14,7 +17,9 @@ const Error = (props) => {
         onClick={props.onClose}
       />
     </main>
+
   );
+
 };
 
 export default Error;

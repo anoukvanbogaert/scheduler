@@ -10,7 +10,8 @@ import {getAppointmentsForDay, getInterview, getInterviewersForDay} from "helper
 import useApplicationData from "hooks/useApplicationData";
 
 
-export default function Application(props) {
+const Application = (props) => {
+
   const {
     state,
     setDay,
@@ -48,7 +49,7 @@ export default function Application(props) {
         <nav className="sidebar__menu">
           <DayList
             days={state.days}
-            value={state.day} //value and onChange make it clear that child uses user input
+            value={state.day}
             onChange={setDay}
           />
         </nav>
@@ -64,4 +65,7 @@ export default function Application(props) {
       </section>
     </main>
   );
-}
+
+};
+
+export default Application;

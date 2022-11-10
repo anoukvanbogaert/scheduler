@@ -1,6 +1,9 @@
 import React from 'react';
 
 import './styles.scss';
+
+import useVisualMode from 'hooks/useVisualMode';
+
 import Header from './Header';
 import Show from './Show';
 import Empty from './Empty';
@@ -9,10 +12,9 @@ import Status from './Status';
 import Confirm from './Confirm';
 import Error from './Error';
 
-import useVisualMode from 'hooks/useVisualMode';
-import {getInterviewersForDay} from 'helpers/selectors';
 
 const Appointment = (props) => {
+
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
@@ -56,6 +58,7 @@ const Appointment = (props) => {
   }
 
   return (
+
     <article className="appointment" data-testid="appointment">
 
       <Header time={props.time} />
@@ -78,7 +81,9 @@ const Appointment = (props) => {
       {mode === ERROR_DELETE && <Error message="Not able to delete this appointment" onClose={() => back()} />}
 
     </article>
+
   );
+
 };
 
 export default Appointment;

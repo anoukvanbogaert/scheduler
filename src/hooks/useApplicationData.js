@@ -23,7 +23,9 @@ export default function useApplicationData(initial) {
             }).length
         };
       }
+
       return day;
+
     });
   };
 
@@ -43,6 +45,7 @@ export default function useApplicationData(initial) {
       ...state.appointments,
       [id]: appointment
     };
+
     return axios
       .put(`/api/appointments/${id}`, {interview: interview})
       .then(() => {
@@ -86,5 +89,7 @@ export default function useApplicationData(initial) {
         });
       });
   };
+
   return {state, setDay, bookInterview, cancelInterview};
+
 }

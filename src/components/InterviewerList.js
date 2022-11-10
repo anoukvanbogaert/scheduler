@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import 'components/InterviewerList.scss';
 import InterviewerListItem from './InterviewerListItem';
 
-export default function InterviewerList(props) {
+const InterviewerList = (props) => {
   InterviewerList.propTypes = {interviewers: PropTypes.array};
 
   const interviewers = props.interviewers.map((interviewer) => {
@@ -28,5 +28,9 @@ export default function InterviewerList(props) {
         {interviewers}
       </ul>
     </section>
+
   );
-}
+
+};
+
+export default InterviewerList;
