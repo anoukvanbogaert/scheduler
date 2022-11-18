@@ -1,8 +1,6 @@
 import React from "react";
-import axios from 'axios';
 
 import "components/Application.scss";
-import Button from './Button';
 import DayList from "./DayList";
 import Appointment from "components/Appointment";
 import {getAppointmentsForDay, getInterview, getInterviewersForDay} from "helpers/selectors";

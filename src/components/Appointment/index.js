@@ -76,7 +76,7 @@ const Appointment = (props) => {
       {mode === SAVING && <Status message="Saving..." />}
       {mode === CONFIRM && <Confirm onCancel={() => transition(SHOW)} onConfirm={trash} />}
       {mode === TRASHING && <Status message="Deleting..." />}
-      {mode === EDIT && <Form interviewers={props.interviewers} onCancel={() => back()} onSave={save} interviewer={props.interview.interviewer.id} student={props.interview.student} />}
+      {mode === EDIT && <Form interviewers={props.interviewers} onCancel={back} onSave={save} interviewer={props.interview.interviewer.id} student={props.interview.student} />}
       {mode === ERROR_SAVE && <Error message="Not able to save this appointment" onClose={() => transition(EMPTY)} />}
       {mode === ERROR_DELETE && <Error message="Not able to delete this appointment" onClose={() => back()} />}
 
